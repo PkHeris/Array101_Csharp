@@ -42,9 +42,12 @@ namespace Array101
         {
             Console.WriteLine("Testing SortedSquares:");
             SortedSquares solution = new SortedSquares();
-            int[] nums = { -4, -1, 0, 3, 10 };
-            int[] result = solution.SortedSquaresNumbers(nums);
-            Console.WriteLine($"Test case: [{string.Join(", ", result)}]");
+            int[] nums_high = { -4, -1, 0, 3, 10 };
+            int[] nums_low = { -4, -1, 0, 3, 10 };
+            int[] complex_high_result = solution.SortedSquaresNumbersHigherComplexity(nums_high);
+            Console.WriteLine($"High Test case: [{string.Join(", ", complex_high_result)}]");
+            int[] complex_low_result = solution.SortedSquaresNumbersLowerComplexity(nums_low);
+            Console.WriteLine($"Low Test case: [{string.Join(", ", complex_low_result)}]");
             Console.WriteLine();
         }
     }
