@@ -7,9 +7,8 @@ namespace Array101
         static void Main(string[] args)
         {
             TestFindMaxConsecutiveOnes();
-            FindNumbers();
-            // Add more test method calls for other problems here
-
+            TestFindNumbers();
+            TestSortedSquares();
             Console.ReadLine(); // Keep console window open
         }
 
@@ -29,16 +28,23 @@ namespace Array101
             Console.WriteLine();
         }
 
-        static void FindNumbers()
+        static void TestFindNumbers()
         {
             Console.WriteLine("Testing FindNumbers:");
             FindNumbers solution = new FindNumbers();
-
-            // Test case for AnotherProblem
             int[] nums = { 12, 345, 2, 6, 7896 };
             int result = solution.FindNumbersWithEvenDigits(nums);
             Console.WriteLine($"Test case: {result}");
+            Console.WriteLine();
+        }
 
+        static void TestSortedSquares()
+        {
+            Console.WriteLine("Testing SortedSquares:");
+            SortedSquares solution = new SortedSquares();
+            int[] nums = { -4, -1, 0, 3, 10 };
+            int[] result = solution.SortedSquaresNumbers(nums);
+            Console.WriteLine($"Test case: [{string.Join(", ", result)}]");
             Console.WriteLine();
         }
     }
