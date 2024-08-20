@@ -11,7 +11,8 @@ namespace Array101
             TestSortedSquares();
             TestDuplicateZeros();
             TestMerge();
-            Console.ReadLine(); // Keep console window open
+            TestRemoveElement();
+            Console.ReadLine(); 
         }
 
         static void TestFindMaxConsecutiveOnes()
@@ -21,11 +22,11 @@ namespace Array101
 
             int[] nums1 = { 1, 1, 0, 1, 1, 1 };
             int result1 = solution.FindMaxConsecutiveOnesMethod(nums1);
-            Console.WriteLine($"Test case 1: {result1}"); // Expected output: 3
+            Console.WriteLine($"Test case 1: {result1}"); 
 
             int[] nums2 = { 1, 0, 1, 1, 0, 1 };
             int result2 = solution.FindMaxConsecutiveOnesMethod(nums2);
-            Console.WriteLine($"Test case 2: {result2}"); // Expected output: 2
+            Console.WriteLine($"Test case 2: {result2}"); 
 
             Console.WriteLine();
         }
@@ -52,6 +53,7 @@ namespace Array101
             Console.WriteLine($"Low Test case: [{string.Join(", ", complex_low_result)}]");
             Console.WriteLine();
         }
+
         static void TestDuplicateZeros()
         {
             Console.WriteLine("Testing DuplicateZeros:");
@@ -64,6 +66,7 @@ namespace Array101
             Console.WriteLine($"Test case 2: [{string.Join(", ", arr2)}]");
             Console.WriteLine();
         }
+
         static void TestMerge()
         {
             Console.WriteLine("Testing Merge:");
@@ -75,8 +78,19 @@ namespace Array101
             solution.MergeTwoGroups(num1, m, num2, n);
             Console.WriteLine($"Test case: [{string.Join(", ", num1)}]");
         }
+
+        static void TestRemoveElement()
+        {
+            Console.WriteLine("Testing RemoveElement:");
+            RemoveElement solution = new RemoveElement();
+            int[] nums = { 0, 1, 2, 2, 3, 0, 4, 2 };
+            int val = 2;
+            int result = solution.RemoveElementbyKtimes(nums, val);
+            Console.WriteLine($"Test case: {result}");
+        }
     }
 }
+
 //dotnet restore
 //dotnet build
 
