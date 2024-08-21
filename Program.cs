@@ -12,6 +12,8 @@ namespace Array101
             TestDuplicateZeros();
             TestMerge();
             TestRemoveElement();
+            TestRemoveDuplicates();
+            TestCheckIfExist ();
             Console.ReadLine(); 
         }
 
@@ -77,6 +79,7 @@ namespace Array101
             int n = 3;
             solution.MergeTwoGroups(num1, m, num2, n);
             Console.WriteLine($"Test case: [{string.Join(", ", num1)}]");
+            Console.WriteLine();
         }
 
         static void TestRemoveElement()
@@ -87,7 +90,31 @@ namespace Array101
             int val = 2;
             int result = solution.RemoveElementbyKtimes(nums, val);
             Console.WriteLine($"Test case: {result}");
+            Console.WriteLine();
         }
+
+        static void TestRemoveDuplicates()
+        {
+            Console.WriteLine("Testing RemoveDuplicates:");
+            RemoveDuplicates solution = new RemoveDuplicates();
+            int[] nums = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+            int result = solution.RemoveDuplicatesReportUnique(nums);
+            Console.WriteLine($"Test case: {result}");
+            Console.WriteLine();
+        }
+
+        static void TestCheckIfExist()
+            {
+                Console.WriteLine("Testing CheckIfExist:");
+                CheckIfExist solution = new CheckIfExist();
+                int[] nums1 = { 10, 2, 5, 3 };
+                bool result1 = solution.CheckIfExistSatisfied(nums1);
+                int[] nums2 = { 3, 1, 7, 11 };
+                bool result2 = solution.CheckIfExistSatisfied(nums2);
+                Console.WriteLine($"Test case1: {result1}");
+                Console.WriteLine($"Test case1: {result2}");
+                Console.WriteLine();
+            }
     }
 }
 

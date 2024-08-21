@@ -4,11 +4,8 @@
 //{
 //    public class ProblemName
 //    {
-//        public int SolveProblem(int[] nums) // or appropriate parameter and return types
+//        public int SolveProblem(int[] nums) 
 //        {
-//            // Your solution logic here
-
-//            // Return the result
 //            return result;
 //        }
 //    }
