@@ -15,6 +15,7 @@ namespace Array101
             TestRemoveDuplicates();
             TestCheckIfExist ();
             TestValidMountainArray();
+            TestReplaceElements();
             Console.ReadLine(); 
         }
 
@@ -131,6 +132,20 @@ namespace Array101
             Console.WriteLine($"Test case2 [{string.Join(", ", nums2)}]: {result2}");
             Console.WriteLine($"Test case3 [{string.Join(", ",nums3)}]: {result3}");
             Console.WriteLine();
+        }
+
+        static void TestReplaceElements()
+        {
+            Console.WriteLine("Testing ReplaceElements:");
+            ReplaceElements solution = new ReplaceElements();
+            int[] arr1 = { 17, 18, 5, 4, 6, 1 };
+            Console.WriteLine($"Testing case 1 [{string.Join(", ", arr1)}]:");
+            int[] result1 = solution.ReplaceElementsInPlace((int[])arr1.Clone());
+            Console.WriteLine($"[{string.Join(", ", result1)}]");
+            int[] arr2 = { 400 };
+            Console.WriteLine($"Testing case 2 [{string.Join(", ", (int[])arr2)}]:");
+            int[] result2 = solution.ReplaceElementsInPlace(arr2);
+            Console.WriteLine($"[{string.Join(", ",result2)}]");
         }
     }
 }
