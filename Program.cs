@@ -14,6 +14,7 @@ namespace Array101
             TestRemoveElement();
             TestRemoveDuplicates();
             TestCheckIfExist ();
+            TestValidMountainArray();
             Console.ReadLine(); 
         }
 
@@ -104,7 +105,7 @@ namespace Array101
         }
 
         static void TestCheckIfExist()
-            {
+        {
                 Console.WriteLine("Testing CheckIfExist:");
                 CheckIfExist solution = new CheckIfExist();
                 int[] nums1 = { 10, 2, 5, 3 };
@@ -112,9 +113,25 @@ namespace Array101
                 int[] nums2 = { 3, 1, 7, 11 };
                 bool result2 = solution.CheckIfExistSatisfied(nums2);
                 Console.WriteLine($"Test case1: {result1}");
-                Console.WriteLine($"Test case1: {result2}");
+                Console.WriteLine($"Test case2: {result2}");
                 Console.WriteLine();
-            }
+        }
+
+        static void TestValidMountainArray()
+        {
+            Console.WriteLine("Testing ValidMountainArray:");
+            ValidMountainArray solution = new ValidMountainArray();
+            int[] nums1 = { 2, 1 };
+            bool result1 = solution.ValidMountainArrayExist(nums1);
+            int[] nums2 = { 3, 5, 5 };
+            bool result2 = solution.ValidMountainArrayExist(nums2);
+            int[] nums3 = { 0, 3, 2, 1 };
+            bool result3 = solution.ValidMountainArrayExist(nums3);
+            Console.WriteLine($"Test case1 [{string.Join(", ", nums1)}]: {result1}");
+            Console.WriteLine($"Test case2 [{string.Join(", ", nums2)}]: {result2}");
+            Console.WriteLine($"Test case3 [{string.Join(", ",nums3)}]: {result3}");
+            Console.WriteLine();
+        }
     }
 }
 

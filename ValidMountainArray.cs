@@ -7,46 +7,27 @@ namespace Array101
         public bool ValidMountainArrayExist(int[] nums)
         {
             int n = nums.Length;
-            int right_to_left = 0;
-            int left_to_right = n-1;
-            bool increase_left = true;
-            int potential_hill = 0;
-            if (n < 3)
+
+            if (n < 3) { return false; }
+            int peak_ind = 0;
+            for(int i = 1; i < n; i++)
             {
-                return false;
-            }
-            while (increase_left)
-            {
-                if (right_to_left >= n - 1)
-                    increase_left = false;
-                    return false;
-                if (nums[right_to_left + 1 ] > nums[right_to_left])
+                if (nums[i] > nums[i-1])
                 {
-                    right_to_left++;
+                    peak_ind++;
                 }
-                else if (nums[right_to_left + 1] == nums[right_to_left])
+                else { break; }
+            }
+            if(peak_ind == 0 || peak_ind == n - 1) { return false; }
+
+            for (int i = peak_ind + 1; i < n; i++)
+            {
+                if (nums[i] >= nums[i - 1])
                 {
-                    increase_left = false;
                     return false;
                 }
-                else if (nums[right_to_left + 1] < nums[right_to_left])
-                {
-                    potential_hill = right_to_left;
-                    increase_left = false;
-                }
             }
-            if (potential_hill != 0)
-            {
-                for (int i = left_to_right; i > potential_hill; i--)
-                {
-                    if (nums[i] < nums[i - 1])
-                    {
-                        return true;
-                    }
-                    else { return false; }
-                }
-            }
-            return false;
+            return true;
 
         }
     }
