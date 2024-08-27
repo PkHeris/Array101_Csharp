@@ -16,6 +16,9 @@ namespace Array101
             TestCheckIfExist ();
             TestValidMountainArray();
             TestReplaceElements();
+            TestMoveZeroes();
+            TestSortArrayByParity();
+
             Console.ReadLine(); 
         }
 
@@ -147,6 +150,34 @@ namespace Array101
             int[] result2 = solution.ReplaceElementsInPlace(arr2);
             Console.WriteLine($"[{string.Join(", ",result2)}]");
         }
+
+        static void TestMoveZeroes()
+        {
+            Console.WriteLine("Testing MoveZeroes:");
+            MoveZeroes solution = new MoveZeroes();
+            int[] arr1 = { 0, 1, 0, 3, 12 };
+            Console.WriteLine($"Testing case 1 [{string.Join(", ", (int[])arr1.Clone())}]:");
+            solution.MoveZeroesInPlace(arr1);
+            Console.WriteLine($"[{string.Join(", ", arr1)}]");
+            int[] arr2 = { 0 };
+            Console.WriteLine($"Testing case 2 [{string.Join(", ", (int[])arr2.Clone())}]:");
+            solution.MoveZeroesInPlace(arr2);
+            Console.WriteLine($"[{string.Join(", ", arr2)}]");
+        }
+        static void TestSortArrayByParity()
+        {
+            Console.WriteLine("Testing SortArrayByParity:");
+            SortArrayByParity solution = new SortArrayByParity();
+            int[] arr1 = { 3, 1, 2, 4 };
+            Console.WriteLine($"Testing case 1 [{string.Join(", ", (int[])arr1.Clone())}]:");
+            solution.SortArrayByParityInPlace(arr1);
+            Console.WriteLine($"[{string.Join(", ", arr1)}]");
+            int[] arr2 = { 0 };
+            Console.WriteLine($"Testing case 2 [{string.Join(", ", (int[])arr2.Clone())}]:");
+            solution.SortArrayByParityInPlace(arr2);
+            Console.WriteLine($"[{string.Join(", ", arr2)}]");
+        }
+
     }
 }
 
