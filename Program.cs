@@ -18,6 +18,7 @@ namespace Array101
             TestReplaceElements();
             TestMoveZeroes();
             TestSortArrayByParity();
+            TestRemoveElementK();
 
             Console.ReadLine(); 
         }
@@ -176,6 +177,21 @@ namespace Array101
             Console.WriteLine($"Testing case 2 [{string.Join(", ", (int[])arr2.Clone())}]:");
             solution.SortArrayByParityInPlace(arr2);
             Console.WriteLine($"[{string.Join(", ", arr2)}]");
+        }
+        static void TestRemoveElementK()
+        {
+            Console.WriteLine("Testing ReplaceElements:");
+            RemoveElementK solution = new RemoveElementK();
+            int[] arr1 = { 3, 2, 2, 3 };
+            int val1 = 3;
+            Console.WriteLine($"Testing case 1 [{string.Join(", ", arr1)}]:");
+            int result1 = solution.RemoveElementKInPlace(arr1, val1);
+            Console.WriteLine($"[{result1}]");
+            int[] arr2 = { 0, 1, 2, 2, 3, 0, 4, 2 };
+            int val2 = 2;
+            Console.WriteLine($"Testing case 2 [{string.Join(", ", arr2)}]:");
+            int result2 = solution.RemoveElementKInPlace(arr2, val2);
+            Console.WriteLine($"[{result2}]");
         }
 
     }
