@@ -19,6 +19,7 @@ namespace Array101
             TestMoveZeroes();
             TestSortArrayByParity();
             TestRemoveElementK();
+            TestHeightChecker();
 
             Console.ReadLine(); 
         }
@@ -192,6 +193,24 @@ namespace Array101
             Console.WriteLine($"Testing case 2 [{string.Join(", ", arr2)}]:");
             int result2 = solution.RemoveElementKInPlace(arr2, val2);
             Console.WriteLine($"[{result2}]");
+        }
+
+        static void TestHeightChecker()
+        {
+            Console.WriteLine("Testing HeightChecker:");
+            HeightChecker solution = new HeightChecker();
+            int[] heights1 = { 1, 1, 4, 2, 1, 3 };
+            int count1 = solution.HeightCheckerDiff(heights1);
+            Console.WriteLine($"Testing Case 1 [{string.Join(", ", heights1)}]:");
+            Console.WriteLine($"{count1}");
+            int[] heights2 = { 5, 1, 2, 3, 4 };
+            int count2 = solution.HeightCheckerDiff(heights2);
+            Console.WriteLine($"Testing Case 1 [{string.Join(", ", heights2)}]:");
+            Console.WriteLine($"{count2}");
+            int[] heights3 = { 1, 2, 3, 4, 5 };
+            int count3 = solution.HeightCheckerDiff(heights3);
+            Console.WriteLine($"Testing Case 1 [{string.Join(", ", heights3)}]:");
+            Console.WriteLine($"{count3}");
         }
 
     }
