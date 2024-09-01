@@ -20,6 +20,7 @@ namespace Array101
             TestSortArrayByParity();
             TestRemoveElementK();
             TestHeightChecker();
+            TestThirdMax();
 
             Console.ReadLine(); 
         }
@@ -212,8 +213,27 @@ namespace Array101
             Console.WriteLine($"Testing Case 1 [{string.Join(", ", heights3)}]:");
             Console.WriteLine($"{count3}");
         }
+        static void TestThirdMax()
+        {
+            Console.WriteLine("Testing ThirdMax:");
+            ThirdMax solution = new ThirdMax();
+            int[] nums1 = { 3, 2, 1 };
+            Console.WriteLine($"Testing Case 1: [{string.Join(", ", (int[])nums1.Clone())}]");
+            int result1 = solution.ThirdMaxOptimzed(nums1);
+            Console.WriteLine($"{result1}");
 
+            int[] nums2 = { 1, 2 };
+            Console.WriteLine($"Testing Case 1: [{string.Join(", ", (int[])nums2.Clone())}]");
+            int result2 = solution.ThirdMaxOptimzed(nums2);
+            Console.WriteLine($"{result2}");
+
+            int[] nums3 = { 2, 2, 3, 1 };
+            Console.WriteLine($"Testing Case 1: [{string.Join(", ", (int[])nums3.Clone())}]");
+            int result3 = solution.ThirdMaxOptimzed(nums3);
+            Console.WriteLine($"{result3}");
+        }
     }
+
 }
 
 //dotnet restore
