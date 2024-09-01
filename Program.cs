@@ -223,12 +223,12 @@ namespace Array101
             Console.WriteLine($"{result1}");
 
             int[] nums2 = { 1, 2 };
-            Console.WriteLine($"Testing Case 1: [{string.Join(", ", (int[])nums2.Clone())}]");
-            int result2 = solution.ThirdMaxOptimzed(nums2);
+            Console.WriteLine($"Testing Case 2 NoneOptimize: [{string.Join(", ", (int[])nums2.Clone())}]");
+            int result2 = solution.ThirdMaxNonInPlace(nums2);
             Console.WriteLine($"{result2}");
 
             int[] nums3 = { 2, 2, 3, 1 };
-            Console.WriteLine($"Testing Case 1: [{string.Join(", ", (int[])nums3.Clone())}]");
+            Console.WriteLine($"Testing Case 3: [{string.Join(", ", (int[])nums3.Clone())}]");
             int result3 = solution.ThirdMaxOptimzed(nums3);
             Console.WriteLine($"{result3}");
         }
