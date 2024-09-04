@@ -21,6 +21,7 @@ namespace Array101
             TestRemoveElementK();
             TestHeightChecker();
             TestThirdMax();
+            TestFindDisappearedNumbers();
 
             Console.ReadLine(); 
         }
@@ -231,6 +232,27 @@ namespace Array101
             Console.WriteLine($"Testing Case 3: [{string.Join(", ", (int[])nums3.Clone())}]");
             int result3 = solution.ThirdMaxOptimzed(nums3);
             Console.WriteLine($"{result3}");
+        }
+
+    static void TestFindDisappearedNumbers()
+        {
+            Console.WriteLine("Testing FindDisappearedNumbers:");
+            FindDisappearedNumbers solution = new FindDisappearedNumbers();
+            int[] nums1 = { 4, 3, 2, 7, 8, 2, 3, 1 };
+            Console.WriteLine($"Testing Case 1: [{string.Join(", ", (int[])nums1.Clone())}]");
+            IList<int> result1 = solution.FindDisappearedNumbersInPlace(nums1);
+            Console.WriteLine($"{string.Join(", ",result1)}");
+
+            int[] nums2 = { 1, 1 };
+            Console.WriteLine($"Testing Case 2 NoneOptimize: [{string.Join(", ", (int[])nums2.Clone())}]");
+            IList<int> result2 = solution.FindDisappearedNumbersInPlace(nums2);
+            Console.WriteLine($"{string.Join(", ", result2)}");
+
+            int[] nums3 = { 4, 3, 2, 2 };
+            Console.WriteLine($"Testing Case 3: [{string.Join(", ", (int[])nums3.Clone())}]");
+            IList<int> result3 = solution.FindDisappearedNumbersInPlace(nums3);
+            Console.WriteLine($"{string.Join(", ", result3)}");
+
         }
     }
 
